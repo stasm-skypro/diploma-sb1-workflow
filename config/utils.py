@@ -8,6 +8,7 @@ load_dotenv(override=True)
 class ImproperlyConfigured(Exception):
     """Ошибка при неправильной настройке окружения."""
 
+    # Мы не добавляем никакой логики, поэтому pass.
     pass
 
 
