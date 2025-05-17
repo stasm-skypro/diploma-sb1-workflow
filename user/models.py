@@ -56,6 +56,14 @@ class User(AbstractBaseUser):
           password (str): Пароль пользователя;
     """
 
+    ROLE_CHOICES = [
+        ("user", "Пользователь"),
+        (
+            "admin",
+            "Администратор",
+        ),
+    ]
+
     # Комменты '# type: ignore[var-annotated]' для mypy - чтобы не требовал аннотаций типов
     first_name = models.CharField(
         max_length=30,
@@ -90,6 +98,7 @@ class User(AbstractBaseUser):
         blank=True,
         verbose_name="Роль",
         help_text="Укажите вашу роль",
+        choices=ROLE_CHOICES,
     )  # type: ignore[var-annotated]
 
     image = models.ImageField(
