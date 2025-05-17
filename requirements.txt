@@ -1,0 +1,13 @@
+django
+django-stubs
+django-stubs-ext
+djangorestframework
+djangorestframework_simplejwt
+psycopg2-binary
+python-dotenv
+black
+flake8
+isort
+mypy
+mypy-extensions
+ipython
