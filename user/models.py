@@ -66,14 +66,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=30,
         blank=True,
         verbose_name="Имя",
-        help_text="Имя",
+        help_text="Имя пользователя",
     )  # type: ignore[var-annotated]
 
     last_name = models.CharField(
         max_length=30,
         blank=True,
         verbose_name="Фамилия",
-        help_text="Фамилия",
+        help_text="ФамилияФамилия пользователя",
     )  # type: ignore[var-annotated]
 
     phone = models.CharField(
@@ -86,7 +86,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True,
         verbose_name="Email",
-        help_text="Электронная почта",
+        help_text="Электронная почта пользователя",
         error_messages={"unique": "Пользователь с таким email уже существует."},
     )  # type: ignore[var-annotated]
 
