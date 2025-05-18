@@ -11,3 +11,4 @@ isort
 mypy
 mypy-extensions
 ipython
+pillow
