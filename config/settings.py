@@ -14,7 +14,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = get_env("DJANGO_SECRET_KEY", required=True)
 DEBUG = get_env("DJANGO_DEBUG", default=False) == "True"
 hosts = get_env("DJANGO_ALLOWED_HOSTS", default="localhost")
+print("hosts:", hosts)
 ALLOWED_HOSTS = [host.strip() for host in hosts.split(",")] if hosts else []
+print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -24,7 +26,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]  # Встроенные приложения
-INSTALLED_APPS += ["corsheaders", "drf_yasg"]  # Сторонние приложения
+INSTALLED_APPS += ["corsheaders", "drf_yasg", "rest_framework", "rest_framework_simplejwt"]  # Сторонние приложения
 INSTALLED_APPS += ["user", "bulletin"]  # Пользовательские приложения
 
 MIDDLEWARE = [
