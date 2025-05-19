@@ -94,7 +94,7 @@ class Review(models.Model):
         Возвращает строковое представление отзыва.
         :return: Строковое представление отзыва
         """
-        return self.text[::10]
+        return self.text[::30]
 
     class Meta:
         verbose_name = "Отзыв"
