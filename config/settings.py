@@ -23,7 +23,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-]
+]  # Встроенные приложения
+INSTALLED_APPS += ["corsheaders", "drf_yasg"]  # Сторонние приложения
 INSTALLED_APPS += ["user", "bulletin"]  # Пользовательские приложения
 
 MIDDLEWARE = [
@@ -35,6 +36,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+MIDDLEWARE += ["corsheaders.middleware.CorsMiddleware"]  # Сторонние приложения
 
 ROOT_URLCONF = "config.urls"
 
@@ -92,14 +94,15 @@ AUTH_USER_MODEL = "user.User"
 
 # Настройка CORS - домены, которым разрешён доступ
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
 ]
-
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
 ]
+CORS_ALLOW_ALL_ORIGINS = False
+
 
 # Media files
 MEDIA_ROOT = BASE_DIR / "media"
