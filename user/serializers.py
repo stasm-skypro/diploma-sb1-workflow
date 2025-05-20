@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from user.models import User
 
@@ -20,12 +21,18 @@ class RegisterSerializer(serializers.ModelSerializer):
     password_confirmation = serializers.CharField(write_only=True)
 
     def validate(self, attrs):
+        """
+        Проверяет, что пароли совпадают.
+        """
         data = super().validate(attrs)
         if data["password"] != data["password_confirmation"]:
             raise serializers.ValidationError("Пароли не совпадают!")
         return data
 
     def create(self, validated_data):
+        """
+        Создает новый объект пользователя.
+        """
         # статический анализатор не знает о существовании метода create_user в менеджере модели User
         user = User.objects.create_user(  # type: ignore
             email=validated_data.get("email"), password=validated_data["password"]
@@ -39,3 +46,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         model = User
         fields = ("email", "password")
+
+
+class EmailTokenObtainPairSerializer(TokenObtainPairSerializer):
+    username_field = "email"

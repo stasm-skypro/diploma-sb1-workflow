@@ -1,14 +1,10 @@
-# -----------------------------------------------------------------------------
-# API endpoints for User
-# -----------------------------------------------------------------------------
+# API endpoints for user
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .serializers import RegisterSerializer  # type: ignore[reportUnusedImport]
+from .serializers import EmailTokenObtainPairSerializer, RegisterSerializer  # type: ignore[reportUnusedImport]
 from .utils import send_welcome_email
-
-# from rest_framework.response import Response
-# from rest_framework import status
 
 
 class RegisterAPIView(CreateAPIView):
@@ -69,13 +65,10 @@ class RegisterAPIView(CreateAPIView):
         response.data = {"message": f"Регистрация пользователя {email} прошла успешно."}
         return response
 
-    # Другой вариант - более простой, но менее правильный с точки зрения архитектуры DRF.
-    # def create(self, request, *args, **kwargs):
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     user = serializer.save(owner=self.request.user)
-    #     send_welcome_email(user.email)
-    #     return Response(
-    #         {"message": f"Регистрация пользователя {user.email} прошла успешно."},
-    #         status=status.HTTP_201_CREATED,
-    #     )
+
+class EmailTokenObtainPairView(TokenObtainPairView):
+    """
+    Представляет сериализатор для получения пары токенов.
+    """
+
+    serializer_class = EmailTokenObtainPairSerializer
