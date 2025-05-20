@@ -96,6 +96,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name="Роль",
         help_text="Укажите вашу роль",
         choices=ROLE_CHOICES,
+        default="user",
     )  # type: ignore[var-annotated]
 
     image = models.ImageField(

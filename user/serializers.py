@@ -45,7 +45,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         """
 
         model = User
-        fields = ("email", "password")
+        fields = ("first_name", "last_name", "phone", "email", "password", "password_confirmation")
 
 
 class EmailTokenObtainPairSerializer(TokenObtainPairSerializer):
