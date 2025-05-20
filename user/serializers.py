@@ -33,11 +33,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         """
         Создает новый объект пользователя.
         """
+        # password_confirmation не является полем модели User, и его нельзя передавать в create_user()
+        validated_data.pop("password_confirmation")
         # статический анализатор не знает о существовании метода create_user в менеджере модели User
-        user = User.objects.create_user(  # type: ignore
-            # email=validated_data.get("email"), password=validated_data["password"]
-            **validated_data
-        )
+        user = User.objects.create_user(**validated_data)  # type: ignore
         return user
 
     class Meta:
@@ -47,6 +46,10 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         model = User
         fields = ("first_name", "last_name", "phone", "email", "password", "password_confirmation")
+        extra_kwargs = {
+            "password": {"write_only": True},
+            "password_confirmation": {"write_only": True},
+        }
 
 
 class EmailTokenObtainPairSerializer(TokenObtainPairSerializer):

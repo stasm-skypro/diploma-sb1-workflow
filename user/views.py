@@ -42,7 +42,7 @@ class RegisterAPIView(CreateAPIView):
         :param serializer: Валидированный сериализатор, содержащий данные для создания объекта.
         :type serializer: rest_framework.serializers.Serializer
         """
-        user = serializer.save(owner=self.request.user)
+        user = serializer.save()
         send_welcome_email(user.email)
 
     def create(self, request, *args, **kwargs):
