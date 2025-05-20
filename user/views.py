@@ -4,8 +4,11 @@
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
 
-from .serializers import RegisterSerializer
+from .serializers import RegisterSerializer  # type: ignore[reportUnusedImport]
 from .utils import send_welcome_email
+
+# from rest_framework.response import Response
+# from rest_framework import status
 
 
 class RegisterAPIView(CreateAPIView):
@@ -65,3 +68,14 @@ class RegisterAPIView(CreateAPIView):
         email = request.data.get("email")
         response.data = {"message": f"Регистрация пользователя {email} прошла успешно."}
         return response
+
+    # Другой вариант - более простой, но менее правильный с точки зрения архитектуры DRF.
+    # def create(self, request, *args, **kwargs):
+    #     serializer = self.get_serializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     user = serializer.save(owner=self.request.user)
+    #     send_welcome_email(user.email)
+    #     return Response(
+    #         {"message": f"Регистрация пользователя {user.email} прошла успешно."},
+    #         status=status.HTTP_201_CREATED,
+    #     )
