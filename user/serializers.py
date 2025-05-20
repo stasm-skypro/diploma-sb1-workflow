@@ -35,7 +35,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         """
         # статический анализатор не знает о существовании метода create_user в менеджере модели User
         user = User.objects.create_user(  # type: ignore
-            email=validated_data.get("email"), password=validated_data["password"]
+            # email=validated_data.get("email"), password=validated_data["password"]
+            **validated_data
         )
         return user
 
