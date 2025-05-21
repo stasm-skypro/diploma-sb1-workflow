@@ -59,7 +59,7 @@ SB1
 
       ```javascript
       {
-          "uid": "uid",
+          "uid": "MTE",
           "token": "token",
           "new_password": "P4$$W0RD"
       }

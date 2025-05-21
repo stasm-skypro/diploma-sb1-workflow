@@ -87,6 +87,8 @@ class PasswordResetRequestView(APIView):
     Получает email, генерирует uid/token и отправляет ссылку для сброса пароля.
     """
 
+    permission_classes = [AllowAny]
+
     def post(self, request):
         email = request.data.get("email")
         try:
@@ -107,6 +109,8 @@ class PasswordResetConfirmView(APIView):
     """
     Подтверждает токен и устанавливает новый пароль.
     """
+
+    permission_classes = [AllowAny]
 
     def post(self, request):
         uid = request.data.get("uid")

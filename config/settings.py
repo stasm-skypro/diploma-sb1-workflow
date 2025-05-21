@@ -130,8 +130,8 @@ FRONTEND_RESET_PASSWORD_URL = "http://localhost:3000/reset-password"  # фрон
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = get_env("EMAIL_HOST", default="smtp.gmail.com")
 EMAIL_PORT = get_env("EMAIL_PORT", default=587)
-EMAIL_USE_TLS = get_env("EMAIL_USE_TLS", default=True)
-EMAIL_USE_SSL = get_env("EMAIL_USE_SSL", default=False)
+EMAIL_USE_TLS = get_env("EMAIL_USE_TLS", default=True) == "True"
+EMAIL_USE_SSL = get_env("EMAIL_USE_SSL", default=False) == "True"
 EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", required=True)  # отправитель
 EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", required=True)  # сгенерированный app password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
