@@ -1,10 +1,18 @@
 # API endpoints for user
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+
+from rest_framework import status
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 
+from .models import User
 from .serializers import EmailTokenObtainPairSerializer, RegisterSerializer  # type: ignore[reportUnusedImport]
-from .utils import send_welcome_email
+from .utils import send_password_reset_email, send_welcome_email
 
 
 class RegisterAPIView(CreateAPIView):
@@ -72,3 +80,49 @@ class EmailTokenObtainPairView(TokenObtainPairView):
     """
 
     serializer_class = EmailTokenObtainPairSerializer
+
+
+class PasswordResetRequestView(APIView):
+    """
+    Получает email, генерирует uid/token и отправляет ссылку для сброса пароля.
+    """
+
+    def post(self, request):
+        email = request.data.get("email")
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return Response({"error": "Пользователь такого email не найден"}, status=status.HTTP_400_BAD_REQUEST)
+
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        token = default_token_generator.make_token(user)
+
+        reset_url = f"{request.scheme}://{request.get_host()}/users/reset_password_confirm/?uid={uid}&token={token}"
+        send_password_reset_email(user.email, reset_url)
+
+        return Response({"message": "Письмо для сброса пароля отправлено"}, status=status.HTTP_200_OK)
+
+
+class PasswordResetConfirmView(APIView):
+    """
+    Подтверждает токен и устанавливает новый пароль.
+    """
+
+    def post(self, request):
+        uid = request.data.get("uid")
+        token = request.data.get("token")
+        new_password = request.data.get("new_password")
+
+        try:
+            uid_decoded = urlsafe_base64_decode(uid).decode()
+            user = User.objects.get(pk=uid_decoded)
+        except (User.DoesNotExist, ValueError, TypeError):
+            return Response({"error": "Неверный uid."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not default_token_generator.check_token(user, token):
+            return Response({"error": "Неверный или просроченный токен."}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.set_password(new_password)
+        user.save()
+
+        return Response({"message": "Пароль успешно изменен"}, status=status.HTTP_200_OK)
