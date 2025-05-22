@@ -35,4 +35,4 @@ class AdsPagination(PageNumberPagination):
     :param page_size: Значение по умолчанию — сколько объектов выводить на страницу, если клиент не указал явно.
     """
 
-    page_size = 10
+    page_size = 4
