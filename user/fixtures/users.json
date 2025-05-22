@@ -1,0 +1,122 @@
+[
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "Johny",
+      "last_name": "Walker",
+      "email": "johny.wolker@example.com",
+      "phone": "+1234567890",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "first_name": "Jack",
+      "last_name": "Daniels",
+      "email": "jack.daniels@example.com",
+      "phone": "+1234567891",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 3,
+    "fields": {
+      "first_name": "Jim",
+      "last_name": "Beam",
+      "email": "jim.beam@example.com",
+      "phone": "+1234567892",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 4,
+    "fields": {
+      "first_name": "Jameson",
+      "last_name": "Irish",
+      "email": "jameson.irish@example.com",
+      "phone": "+1234567893",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 5,
+    "fields": {
+      "first_name": "Glen",
+      "last_name": "Fiddich",
+      "email": "glen.fiddich@example.com",
+      "phone": "+1234567894",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 6,
+    "fields": {
+      "first_name": "Chivas",
+      "last_name": "Regal",
+      "email": "chivas.regal@example.com",
+      "phone": "+1234567895",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 7,
+    "fields": {
+      "first_name": "Veuve",
+      "last_name": "Clicquot",
+      "email": "veuve.clicquot@example.com",
+      "phone": "+1234567896",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 8,
+    "fields": {
+      "first_name": "Remy",
+      "last_name": "Martin",
+      "email": "remy.martin@example.com",
+      "phone": "+1234567897",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 9,
+    "fields": {
+      "first_name": "Hennessy",
+      "last_name": "XO",
+      "email": "hennessy.xo@example.com",
+      "phone": "+1234567898",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 10,
+    "fields": {
+      "first_name": "Don",
+      "last_name": "Julio",
+      "email": "don.julio@example.com",
+      "phone": "+1234567899",
+      "role": "user",
+      "password": "P4$$w0rd"
+    }
+  }
+]
