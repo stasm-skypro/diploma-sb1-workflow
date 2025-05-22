@@ -5,9 +5,9 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Bulletin
+from .models import Bulletin, Review
 from .paginators import AdsPagination
-from .serializers import BulletinSerializer
+from .serializers import BulletinSerializer, ReviewSerializer
 
 
 class BulletinViewSet(ModelViewSet):
@@ -29,4 +29,6 @@ class BulletinViewSet(ModelViewSet):
 
 
 class ReviewViewSet(ModelViewSet):
-    pass
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
