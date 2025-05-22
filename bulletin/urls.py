@@ -5,8 +5,7 @@ from .views import BulletinViewSet
 
 app_name = BulletinConfig.name
 
-# /api/bulletin/bulletins/ - обычный CRUD
 router = DefaultRouter()
-router.register(r"bulletins", BulletinViewSet, basename="bulletins")
+router.register(r"bulletins", BulletinViewSet, basename="bulletins")  # /api/bulletin/bulletins/ - CRUD
 
 urlpatterns = router.urls

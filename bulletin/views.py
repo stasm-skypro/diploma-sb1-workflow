@@ -9,32 +9,37 @@ from .serializers import BulletinSerializer, ReviewSerializer
 
 
 class BulletinViewSet(ModelViewSet):
+    """
+    API endpoint, который позволяет просматривать, редактировать и удалять объявления.
+    :param queryset: объекты Bulletin
+    :param serializer_class: сериализатор класса Bulletin
+    :param permission_classes: классы уровней доступа
+    :param pagination_class: пагинатор
+    :filter_backends: фильтры
+    :filterset_fields: поля для фильтрации
+    """
+
     queryset = Bulletin.objects.all()
+
     serializer_class = BulletinSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ["title"]
     pagination_class = BulletinPagination
 
-    # TODO: Возможно убрать пагинацию для отдельнго url /ads/
-    # @action(detail=False, methods=["get"], url_path="spec_pag")
-    # def spec_pag(self, request):
-    #     """
-    #     Кастомный эндпоинт для /ads/ с пагинацией по 4 объекта.
-    #     """
-    #     # Установим нужный пагинатор
-    #     paginator = AdsPagination()
-    #     queryset = self.get_queryset()
-    #     page = paginator.paginate_queryset(queryset, request)
-    #     if page is not None:
-    #         serializer = self.get_serializer(page, many=True)
-    #         return paginator.get_paginated_response(serializer.data)
-    #     serializer = self.get_serializer(queryset, many=True)
-    #     return Response(serializer.data)
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["title"]
 
 
 class ReviewViewSet(ModelViewSet):
+    """
+    API endpoint, который позволяет просматривать, редактировать и удалять отзывы.
+    :param queryset: объекты Review
+    :param serializer_class: сериализатор класса Review
+    :param permission_classes: классы уровней доступа
+    :param pagination_class: пагинатор
+    """
+
     queryset = Review.objects.all()
+
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     pagination_class = ReviewPagination

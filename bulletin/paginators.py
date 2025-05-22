@@ -27,12 +27,3 @@ class ReviewPagination(PageNumberPagination):
     page_size = 4
     page_size_query_param = "page_size"
     max_page_size = 10
-
-
-# class AdsPagination(PageNumberPagination):
-#     """
-#     Пагинатор для объявлений (ads).
-#     :param page_size: Значение по умолчанию — сколько объектов выводить на страницу, если клиент не указал явно.
-#     """
-
-#     page_size = 4
