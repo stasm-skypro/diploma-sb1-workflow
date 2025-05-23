@@ -51,7 +51,7 @@ class RegisterAPIView(CreateAPIView):
         :type serializer: rest_framework.serializers.Serializer
         """
         user = serializer.save()
-        send_welcome_email.dalay(user.email)
+        send_welcome_email.delay(user.email)
 
     def create(self, request, *args, **kwargs):
         """
