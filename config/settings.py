@@ -135,3 +135,9 @@ EMAIL_USE_SSL = get_env("EMAIL_USE_SSL", default=False) == "True"
 EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", required=True)  # отправитель
 EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", required=True)  # сгенерированный app password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+CELERY_TIME_ZONE = TIME_ZONE
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
