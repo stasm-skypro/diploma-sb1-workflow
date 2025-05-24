@@ -32,7 +32,7 @@ class IsAdministrator(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         """
-        Проверяет, администратор может просматривать и редактировать/удалять объект.
+        Проверяет, что администратор может просматривать и редактировать/удалять объект.
         :param request: Запрос
         :param view: Представление
         :param obj: Объект
