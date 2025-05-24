@@ -1,10 +1,10 @@
-# API endpoints for bulletin and review
+# bulletin/views.py
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.viewsets import ModelViewSet
 
 from .models import Bulletin, Review
 from .paginators import BulletinPagination, ReviewPagination
+from .permissions import IsAuthenticatedOrReadOnlyForReviews, IsAuthorOrAdminOrReadOnlyForBulletin
 from .serializers import BulletinSerializer, ReviewSerializer
 
 
@@ -22,7 +22,7 @@ class BulletinViewSet(ModelViewSet):
     queryset = Bulletin.objects.all()
 
     serializer_class = BulletinSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthorOrAdminOrReadOnlyForBulletin]
     pagination_class = BulletinPagination
 
     filter_backends = [DjangoFilterBackend]
@@ -41,5 +41,5 @@ class ReviewViewSet(ModelViewSet):
     queryset = Review.objects.all()
 
     serializer_class = ReviewSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnlyForReviews]
     pagination_class = ReviewPagination

@@ -111,6 +111,11 @@ MEDIA_URL = "/media/"
 FILE_UPLOAD_MAX_MEMORY_SIZE = 2 * 1024 * 1024  # max 2 MB
 
 REST_FRAMEWORK = {
+    "DEFAULT_FILTER_BACKENDS": [  # Настройка фильтрации данных
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],

@@ -1,102 +1,102 @@
 [
-{
-  "model": "bulletin.review",
-  "pk": 1,
-  "fields": {
-    "text": "Отличный товар, полностью соответствует описанию.",
-    "author": 1,
-    "ad": 10,
-    "created_at": "2025-05-22T15:22:02.016Z"
+  {
+    "model": "bulletin.review",
+    "pk": 1,
+    "fields": {
+      "text": "Отличный товар, полностью соответствует описанию.",
+      "author": 1,
+      "ad": 10,
+      "created_at": "2025-05-22T15:22:02.016Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 2,
+    "fields": {
+      "text": "Продавец ответил быстро, всё понравилось.",
+      "author": 2,
+      "ad": 9,
+      "created_at": "2025-05-22T15:22:02.020Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 3,
+    "fields": {
+      "text": "Хорошее качество, рекомендую.",
+      "author": 3,
+      "ad": 8,
+      "created_at": "2025-05-22T15:22:02.021Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 4,
+    "fields": {
+      "text": "Быстрая доставка и честное описание.",
+      "author": 4,
+      "ad": 7,
+      "created_at": "2025-05-22T15:22:02.022Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 5,
+    "fields": {
+      "text": "Пользуюсь уже неделю — всё отлично.",
+      "author": 5,
+      "ad": 6,
+      "created_at": "2025-05-22T15:22:02.023Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 6,
+    "fields": {
+      "text": "Было немного сомнений, но всё супер!",
+      "author": 6,
+      "ad": 5,
+      "created_at": "2025-05-22T15:22:02.024Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 7,
+    "fields": {
+      "text": "Упаковка надёжная, товар новый.",
+      "author": 7,
+      "ad": 4,
+      "created_at": "2025-05-22T15:22:02.025Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 8,
+    "fields": {
+      "text": "Продавец вежливый, помог с выбором.",
+      "author": 8,
+      "ad": 3,
+      "created_at": "2025-05-22T15:22:02.027Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 9,
+    "fields": {
+      "text": "Реально стоит своих денег.",
+      "author": 9,
+      "ad": 2,
+      "created_at": "2025-05-22T15:22:02.028Z"
+    }
+  },
+  {
+    "model": "bulletin.review",
+    "pk": 10,
+    "fields": {
+      "text": "Сделка прошла без проблем, рекомендую!",
+      "author": 10,
+      "ad": 1,
+      "created_at": "2025-05-22T15:22:02.029Z"
+    }
   }
-},
-{
-  "model": "bulletin.review",
-  "pk": 2,
-  "fields": {
-    "text": "Продавец ответил быстро, всё понравилось.",
-    "author": 2,
-    "ad": 9,
-    "created_at": "2025-05-22T15:22:02.020Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 3,
-  "fields": {
-    "text": "Хорошее качество, рекомендую.",
-    "author": 3,
-    "ad": 8,
-    "created_at": "2025-05-22T15:22:02.021Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 4,
-  "fields": {
-    "text": "Быстрая доставка и честное описание.",
-    "author": 4,
-    "ad": 7,
-    "created_at": "2025-05-22T15:22:02.022Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 5,
-  "fields": {
-    "text": "Пользуюсь уже неделю — всё отлично.",
-    "author": 5,
-    "ad": 6,
-    "created_at": "2025-05-22T15:22:02.023Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 6,
-  "fields": {
-    "text": "Было немного сомнений, но всё супер!",
-    "author": 6,
-    "ad": 5,
-    "created_at": "2025-05-22T15:22:02.024Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 7,
-  "fields": {
-    "text": "Упаковка надёжная, товар новый.",
-    "author": 7,
-    "ad": 4,
-    "created_at": "2025-05-22T15:22:02.025Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 8,
-  "fields": {
-    "text": "Продавец вежливый, помог с выбором.",
-    "author": 8,
-    "ad": 3,
-    "created_at": "2025-05-22T15:22:02.027Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 9,
-  "fields": {
-    "text": "Реально стоит своих денег.",
-    "author": 9,
-    "ad": 2,
-    "created_at": "2025-05-22T15:22:02.028Z"
-  }
-},
-{
-  "model": "bulletin.review",
-  "pk": 10,
-  "fields": {
-    "text": "Сделка прошла без проблем, рекомендую!",
-    "author": 10,
-    "ad": 1,
-    "created_at": "2025-05-22T15:22:02.029Z"
-  }
-}
 ]

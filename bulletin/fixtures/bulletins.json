@@ -1,112 +1,112 @@
 [
-{
-  "model": "bulletin.bulletin",
-  "pk": 1,
-  "fields": {
-    "title": "iPhone 15 Pro Max",
-    "price": 85655,
-    "description": "В идеальном состоянии, полный комплект.",
-    "author": 1,
-    "created_at": "2025-05-22T15:18:10.277Z"
+  {
+    "model": "bulletin.bulletin",
+    "pk": 1,
+    "fields": {
+      "title": "iPhone 15 Pro Max",
+      "price": 85655,
+      "description": "В идеальном состоянии, полный комплект.",
+      "author": 1,
+      "created_at": "2025-05-22T15:18:10.277Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 2,
+    "fields": {
+      "title": "PlayStation 5",
+      "price": 83759,
+      "description": "Почти не использовался, всё работает.",
+      "author": 2,
+      "created_at": "2025-05-22T15:18:10.286Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 3,
+    "fields": {
+      "title": "MacBook Air M3",
+      "price": 168864,
+      "description": "Новая модель, куплена недавно.",
+      "author": 3,
+      "created_at": "2025-05-22T15:18:10.287Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 4,
+    "fields": {
+      "title": "Велосипед Trek FX 3",
+      "price": 127757,
+      "description": "Есть мелкие царапины, цена снижена.",
+      "author": 4,
+      "created_at": "2025-05-22T15:18:10.288Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 5,
+    "fields": {
+      "title": "Электросамокат Xiaomi",
+      "price": 33636,
+      "description": "Продажа по причине ненадобности.",
+      "author": 5,
+      "created_at": "2025-05-22T15:18:10.289Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 6,
+    "fields": {
+      "title": "Гитара Fender Stratocaster",
+      "price": 80965,
+      "description": "Подарок, не подошёл.",
+      "author": 6,
+      "created_at": "2025-05-22T15:18:10.290Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 7,
+    "fields": {
+      "title": "Монитор LG UltraFine 5K",
+      "price": 65244,
+      "description": "Гарантия до конца года.",
+      "author": 7,
+      "created_at": "2025-05-22T15:18:10.291Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 8,
+    "fields": {
+      "title": "Кресло Herman Miller",
+      "price": 36186,
+      "description": "Использовался аккуратно, без дефектов.",
+      "author": 8,
+      "created_at": "2025-05-22T15:18:10.292Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 9,
+    "fields": {
+      "title": "Наушники Sony WH-1000XM5",
+      "price": 148356,
+      "description": "Цвет чёрный, всё оригинальное.",
+      "author": 9,
+      "created_at": "2025-05-22T15:18:10.293Z"
+    }
+  },
+  {
+    "model": "bulletin.bulletin",
+    "pk": 10,
+    "fields": {
+      "title": "Часы Apple Watch Series 9",
+      "price": 71713,
+      "description": "Без торга, цена окончательная.",
+      "author": 10,
+      "created_at": "2025-05-22T15:18:10.293Z"
+    }
   }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 2,
-  "fields": {
-    "title": "PlayStation 5",
-    "price": 83759,
-    "description": "Почти не использовался, всё работает.",
-    "author": 2,
-    "created_at": "2025-05-22T15:18:10.286Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 3,
-  "fields": {
-    "title": "MacBook Air M3",
-    "price": 168864,
-    "description": "Новая модель, куплена недавно.",
-    "author": 3,
-    "created_at": "2025-05-22T15:18:10.287Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 4,
-  "fields": {
-    "title": "Велосипед Trek FX 3",
-    "price": 127757,
-    "description": "Есть мелкие царапины, цена снижена.",
-    "author": 4,
-    "created_at": "2025-05-22T15:18:10.288Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 5,
-  "fields": {
-    "title": "Электросамокат Xiaomi",
-    "price": 33636,
-    "description": "Продажа по причине ненадобности.",
-    "author": 5,
-    "created_at": "2025-05-22T15:18:10.289Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 6,
-  "fields": {
-    "title": "Гитара Fender Stratocaster",
-    "price": 80965,
-    "description": "Подарок, не подошёл.",
-    "author": 6,
-    "created_at": "2025-05-22T15:18:10.290Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 7,
-  "fields": {
-    "title": "Монитор LG UltraFine 5K",
-    "price": 65244,
-    "description": "Гарантия до конца года.",
-    "author": 7,
-    "created_at": "2025-05-22T15:18:10.291Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 8,
-  "fields": {
-    "title": "Кресло Herman Miller",
-    "price": 36186,
-    "description": "Использовался аккуратно, без дефектов.",
-    "author": 8,
-    "created_at": "2025-05-22T15:18:10.292Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 9,
-  "fields": {
-    "title": "Наушники Sony WH-1000XM5",
-    "price": 148356,
-    "description": "Цвет чёрный, всё оригинальное.",
-    "author": 9,
-    "created_at": "2025-05-22T15:18:10.293Z"
-  }
-},
-{
-  "model": "bulletin.bulletin",
-  "pk": 10,
-  "fields": {
-    "title": "Часы Apple Watch Series 9",
-    "price": 71713,
-    "description": "Без торга, цена окончательная.",
-    "author": 10,
-    "created_at": "2025-05-22T15:18:10.293Z"
-  }
-}
 ]
