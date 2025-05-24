@@ -1,28 +1,41 @@
+"""
+| Действие                    | Аноним  | Пользователь | Администратор |
+| --------------------------- | ------- | ------------ | ------------- |
+| Получить список объявлений  | ✅      | ✅          | ✅            |
+| Получить одно объявление    | ❌      | ✅          | ✅            |
+| Создать объявление          | ❌      | ✅          | ✅            |
+| Редактировать/удалить своё  | ❌      | ✅          | ✅            |
+| Редактировать/удалить чужое | ❌      | ❌          | ✅            |
+| Получить список отзывов     | ❌      | ✅          | ✅            |
+| Создать отзыв               | ❌      | ✅          | ✅            |
+| Редактировать/удалить свой  | ❌      | ✅          | ✅            |
+| Редактировать/удалить чужой | ❌      | ❌          | ✅            |
+
+"""
+
 from rest_framework import permissions
 
 
-class IsAuthorOrAdminOrReadOnlyForBulletin(permissions.BasePermission):
+class IsAdministrator(permissions.BasePermission):
     """
-    Разрешает безопасные методы всем, изменение/удаление — только автору или администратору.
+    Разрешает администраторам все операции.
     """
-
-    def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return obj.author == request.user or request.user.groups.filter(name="Администраторы").exists()
-
-
-class IsAuthorOrAdminOrReadOnlyForReview(permissions.BasePermission):
-    """
-    Анонимы могут только смотреть отзывы, авторы могут редактировать свои, администраторы — любые.
-    """
-
-    def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return obj.author == request.user or request.user.groups.filter(name="Администраторы").exists()
 
     def has_permission(self, request, view):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return request.user.is_authenticated
+        """
+        Проверяет, является ли текущий пользователь администратором.
+        :param request: Запрос
+        :param view: Представление
+        :return: True, если текущий пользователь является администратором
+        """
+        return request.user.groups.filter(name="Администраторы").exists()
+
+    def has_object_permission(self, request, view, obj):
+        """
+        Проверяет, администратор может просматривать и редактировать/удалять объект.
+        :param request: Запрос
+        :param view: Представление
+        :param obj: Объект
+        :return: True, если текущий пользователь является администратором
+        """
+        return request.user.groups.filter(name="Администраторы").exists()
