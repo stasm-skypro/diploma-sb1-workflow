@@ -16,3 +16,5 @@ pillow
 celery~=5.5.2
 drf-yasg~=1.21.10
 django-filter~=25.1
+
+django-crispy-forms

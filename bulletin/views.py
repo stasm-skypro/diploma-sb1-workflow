@@ -19,7 +19,7 @@ class BulletinViewSet(ModelViewSet):
     :filterset_fields: поля для фильтрации
     """
 
-    queryset = Bulletin.objects.all()
+    queryset = Bulletin.objects.all().order_by("-created_at")
 
     serializer_class = BulletinSerializer
     permission_classes = [IsAuthorOrAdminOrReadOnlyForBulletin]
@@ -38,7 +38,7 @@ class ReviewViewSet(ModelViewSet):
     :param pagination_class: пагинатор
     """
 
-    queryset = Review.objects.all()
+    queryset = Review.objects.all().order_by("-created_at")
 
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnlyForReviews]

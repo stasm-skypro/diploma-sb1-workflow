@@ -1,3 +1,4 @@
+# bulletin/urls.py
 from rest_framework.routers import DefaultRouter
 
 from .apps import BulletinConfig
