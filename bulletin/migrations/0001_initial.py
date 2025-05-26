@@ -60,7 +60,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 (
-                    "ad",
+                    "bulletin",
                     models.ForeignKey(
                         help_text="Объявление, под которым оставлен отзыв",
                         on_delete=django.db.models.deletion.CASCADE,

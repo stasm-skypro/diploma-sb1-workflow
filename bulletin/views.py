@@ -5,7 +5,8 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Bulletin, Review
 from .paginators import BulletinPagination, ReviewPagination
 from .permissions import IsAuthenticatedOrReadOnlyForReviews, IsAuthorOrAdminOrReadOnlyForBulletin
-from .serializers import BulletinCreateSerializer, BulletinDetailSerializer, BulletinListSerialiser, ReviewSerializer
+from .serializers import BulletinCreateSerializer, BulletinDetailSerializer, BulletinListSerializer, ReviewSerializer
+from .utils import send_review_notification_email
 
 
 class BulletinViewSet(ModelViewSet):
@@ -32,7 +33,7 @@ class BulletinViewSet(ModelViewSet):
 
     def get_serializer_class(self):  # type: ignore
         if self.action == "list":
-            return BulletinListSerialiser
+            return BulletinListSerializer
         elif self.action == "retrieve":
             return BulletinDetailSerializer
         return BulletinCreateSerializer
@@ -56,3 +57,25 @@ class ReviewViewSet(ModelViewSet):
 
     search_fields = ["text"]
     ordering_fields = ["text", "created_at"]
+
+    def perform_create(self, serializer):  # type: ignore
+        # Назначаем текущего пользователя автором
+        review = serializer.save(author=self.request.user)
+
+        # Отправляем письмо владельцу объявления
+        bulletin = review.bulletin
+        email = bulletin.author.email
+        bulletin_id = bulletin.id
+        bulletin_title = bulletin.title
+        bulletin_author = bulletin.author.email
+        review_author = review.author.email
+        review_text = review.text
+
+        send_review_notification_email.delay(
+            email=email,
+            bulletin_id=bulletin_id,
+            bulletin_title=bulletin_title,
+            bulletin_author=bulletin_author,
+            review_author=review_author,
+            review_text=review_text,
+        )

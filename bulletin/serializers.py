@@ -14,7 +14,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Review
-        fields = ["id", "text", "author", "created_at"]
+        fields = ["id", "text", "author", "bulletin", "created_at"]
         read_only_fields = ["id", "author", "created_at"]
 
     def create(self, validated_data):
@@ -29,7 +29,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
 
-class BulletinListSerialiser(serializers.ModelSerializer):
+class BulletinListSerializer(serializers.ModelSerializer):
     """
     Сериализатор для краткого представления объявлений (список).
 
@@ -54,7 +54,7 @@ class BulletinDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bulletin
-        fields = ["id", "title", "price", "author", "created_at"]
+        fields = ["id", "title", "price", "description", "author", "created_at"]
         fields += ["reviews"]  # добавляем 'reviews' в список полей
         read_only_fields = ["id", "author", "created_at"]
 
