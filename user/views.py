@@ -79,7 +79,7 @@ class EmailTokenObtainPairView(TokenObtainPairView):
     Представляет сериализатор для получения пары токенов.
     """
 
-    serializer_class = EmailTokenObtainPairSerializer
+    serializer_class = EmailTokenObtainPairSerializer  # type: ignore[assignment]
 
 
 class PasswordResetRequestView(APIView):
