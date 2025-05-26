@@ -77,8 +77,9 @@ class Review(models.Model):
         help_text="Пользователь, который оставил отзыв",
     )  # type: ignore[var-annotated]
 
-    ad = models.ForeignKey(
+    bulletin = models.ForeignKey(
         "bulletin.Bulletin",
+        related_name="reviews",
         on_delete=models.CASCADE,
         verbose_name="Объявление",
         help_text="Объявление, под которым оставлен отзыв",

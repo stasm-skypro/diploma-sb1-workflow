@@ -43,3 +43,4 @@ class ReviewViewSet(ModelViewSet):
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnlyForReviews]
     pagination_class = ReviewPagination
+    filterset_fields = ["bulletin"]  # Позволяет ?bulletin=<id>

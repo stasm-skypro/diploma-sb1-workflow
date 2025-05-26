@@ -20,6 +20,6 @@ class ReviewAdmin(admin.ModelAdmin):
     Представляет административное представление для отзыва.
     """
 
-    list_display = ("text", "author", "ad", "created_at")
-    list_filter = ("text", "author", "ad")
-    search_fields = ("text", "author", "ad")
+    list_display = ("text", "author", "bulletin", "created_at")
+    list_filter = ("text", "author", "bulletin")
+    search_fields = ("text", "author", "bulletin")
