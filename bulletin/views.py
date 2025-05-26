@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Bulletin, Review
 from .paginators import BulletinPagination, ReviewPagination
 from .permissions import IsAuthenticatedOrReadOnlyForReviews, IsAuthorOrAdminOrReadOnlyForBulletin
-from .serializers import BulletinSerializer, ReviewSerializer
+from .serializers import BulletinCreateSerializer, BulletinDetailSerializer, BulletinListSerialiser, ReviewSerializer
 
 
 class BulletinViewSet(ModelViewSet):
@@ -21,12 +21,18 @@ class BulletinViewSet(ModelViewSet):
 
     queryset = Bulletin.objects.all().order_by("-created_at")
 
-    serializer_class = BulletinSerializer
     permission_classes = [IsAuthorOrAdminOrReadOnlyForBulletin]
     pagination_class = BulletinPagination
 
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ["title"]
+
+    def get_serializer_class(self):  # type: ignore
+        if self.action == "list":
+            return BulletinListSerialiser
+        elif self.action == "retrieve":
+            return BulletinDetailSerializer
+        return BulletinCreateSerializer
 
 
 class ReviewViewSet(ModelViewSet):
