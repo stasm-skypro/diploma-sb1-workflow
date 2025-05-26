@@ -27,6 +27,9 @@ class BulletinViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ["title"]
 
+    search_fields = ["title"]
+    ordering_fields = ["title", "price", "created_at"]
+
     def get_serializer_class(self):  # type: ignore
         if self.action == "list":
             return BulletinListSerialiser
@@ -50,3 +53,6 @@ class ReviewViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnlyForReviews]
     pagination_class = ReviewPagination
     filterset_fields = ["bulletin"]  # Позволяет ?bulletin=<id>
+
+    search_fields = ["text"]
+    ordering_fields = ["text", "created_at"]
