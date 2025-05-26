@@ -42,7 +42,7 @@ class BulletinViewSet(ModelViewSet):
 class ReviewViewSet(ModelViewSet):
     """
     API endpoint, который позволяет просматривать, редактировать и удалять отзывы.
-    :param queryset: объекты Review
+    :param queryset: Объекты Review
     :param serializer_class: сериализатор класса Review
     :param permission_classes: классы уровней доступа
     :param pagination_class: пагинатор
@@ -59,6 +59,13 @@ class ReviewViewSet(ModelViewSet):
     ordering_fields = ["text", "created_at"]
 
     def perform_create(self, serializer):  # type: ignore
+        """
+        Сохраняет новый отзыв, устанавливая текущего пользователя автором,
+        и инициирует отправку уведомительного письма владельцу объявления.
+
+        :param serializer: Экземпляр сериализатора, содержащий проверенные данные отзыва.
+        :return: None
+        """
         # Назначаем текущего пользователя автором
         review = serializer.save(author=self.request.user)
 
