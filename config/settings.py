@@ -64,7 +64,6 @@ TEMPLATES = [
 ]
 TEMPLATES[0]["DIRS"] = [BASE_DIR / "templates"]
 
-
 WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
@@ -112,7 +111,6 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
-
 
 # Media files
 MEDIA_ROOT = BASE_DIR / "media"
@@ -163,3 +161,10 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+SWAGGER_USE_COMPAT_RENDERERS = False  # Убирает предупреждение в консоли. Суть предупреждения: drf-yasg предупреждает,
+# что формат для SwaggerJSONRenderer и SwaggerYAMLRenderer больше не включает префикс точки (.).
+# Раньше:
+# GET /swagger.json
+# Теперь (без точки):
+# GET /swaggerjson
