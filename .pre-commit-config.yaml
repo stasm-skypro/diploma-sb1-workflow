@@ -8,6 +8,7 @@ repos:
       - id: trailing-whitespace
       - id: debug-statements  # запрещает print() и pdb
       - id: name-tests-test  # проверяет, что тесты начинаются с test_
+        args: ["--pytest-test-first"]
 
   - repo: https://github.com/psf/black
     rev: 24.3.0

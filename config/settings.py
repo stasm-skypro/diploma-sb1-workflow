@@ -79,7 +79,7 @@ DATABASES = {
 }
 
 # Настройка лёгкой БД для тестов
-if "test" in sys.argv:
+if "pytest" in sys.argv[0]:
     DATABASES["default"] = {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}
 
 AUTH_PASSWORD_VALIDATORS = [
