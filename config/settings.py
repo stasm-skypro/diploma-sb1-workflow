@@ -154,17 +154,18 @@ EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", required=True)  # отправит�
 EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", required=True)  # сгенерированный app password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-CELERY_BROKER_URL = "redis://localhost:6379/0"
-CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+CELERY_BROKER_URL = get_env("CELERY_BROKER_URL", required=True)
+CELERY_RESULT_BACKEND = get_env("CELERY_RESULT_BACKEND", required=True)
 CELERY_TIME_ZONE = TIME_ZONE
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
+# Усовершенствованное отображение форм Bootstrap 4
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SWAGGER_USE_COMPAT_RENDERERS = False  # Убирает предупреждение в консоли. Суть предупреждения: drf-yasg предупреждает,
-# что формат для SwaggerJSONRenderer и SwaggerYAMLRenderer больше не включает префикс точки (.).
-# Раньше:
-# GET /swagger.json
-# Теперь (без точки):
-# GET /swaggerjson
+# Убирает предупреждение в консоли - теперь (без точки): GET /swaggerjson
+SWAGGER_USE_COMPAT_RENDERERS = False
+
+# Настройка CORS - домены, которым разрешён доступ
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000", "http://5.35.108.203"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000", "http://5.35.108.203"]
