@@ -1,0 +1,15 @@
+# bulletin/management/commands/load_initial_bulletin_data.py
+from django.core.management import call_command
+from django.core.management.base import BaseCommand
+
+from bulletin.models import Bulletin
+
+
+class Command(BaseCommand):
+    def handle(self, *args, **kwargs):
+        if Bulletin.objects.count() == 0:
+            self.stdout.write("Loading fixtures...")
+            call_command("loaddata", "bulletin/fixtures/bulletins.json", verbosity=2)
+            call_command("loaddata", "bulletin/fixtures/reviews.json", verbosity=2)
+        else:
+            self.stdout.write("Fixtures already loaded.")
