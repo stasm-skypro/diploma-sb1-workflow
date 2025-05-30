@@ -161,7 +161,7 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
 # Усовершенствованное отображение форм Bootstrap 4
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Убирает предупреждение в консоли - теперь (без точки): GET /swaggerjson
 SWAGGER_USE_COMPAT_RENDERERS = False

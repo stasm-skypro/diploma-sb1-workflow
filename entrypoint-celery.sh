@@ -9,8 +9,6 @@ done
 
 echo "PostgreSQL started"
 
-# Применяем миграции
-python manage.py migrate
-
 # Запускаем Celery
+echo "Starting Celery worker..."
 celery -A config worker --loglevel=info
