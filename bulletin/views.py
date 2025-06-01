@@ -55,8 +55,8 @@ class ReviewViewSet(ModelViewSet):
     pagination_class = ReviewPagination
     filterset_fields = ["bulletin"]  # Позволяет ?bulletin=<id>
 
-    search_fields = ["text"]
-    ordering_fields = ["text", "created_at"]
+    search_fields = ["text", "created_at"]
+    ordering_fields = ["created_at"]
 
     def perform_create(self, serializer):  # type: ignore
         """
