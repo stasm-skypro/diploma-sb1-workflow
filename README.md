@@ -246,7 +246,7 @@ Backend-часть для сайта объявлений. Платформа п
     -   Получать одно объявление (`GET /api/bulletin/bulletins/{id}/`).
     -   Создавать объявление (`POST /api/bulletin/bulletins/`).
     -   Редактировать и удалять **свои** объявления.
-    -   Получать список своих объявлений (`GET /api/bulletin/bulletins/`).
+    -   Получать список своих объявлений (`GET /api/bulletin/bulletins/me/`).
     -   Получать список отзывов к объявлению (`GET /api/bulletin/bulletins/{ad_pk}/reviews/`).
     -   Получать один отзыв (`GET /api/bulletin/bulletins/{ad_pk}/reviews/{review_pk}/`).
     -   Создавать отзывы (`POST /api/bulletin/bulletins/{ad_pk}/reviews/`).
