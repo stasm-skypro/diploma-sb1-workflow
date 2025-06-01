@@ -22,7 +22,7 @@ Backend-часть для сайта объявлений. Платформа п
 -   **База данных:** PostgreSQL
 -   **Аутентификация:** djangorestframework-simplejwt
 -   **Фильтрация/Поиск:** django-filter
--   **API документация:** drf-spectacular (Swagger/OpenAPI) или drf-yasg
+-   **API документация:** drf-yasg (Swagger/OpenAPI/Redoc)
 -   **Обработка изображений:** Pillow
 -   **Контейнеризация:** Docker, Docker Compose
 -   **Тестирование:** Pytest, pytest-django
@@ -45,7 +45,7 @@ Backend-часть для сайта объявлений. Платформа п
     ```
 
 2.  **Настройка переменных окружения:**
-    Создайте файл `.env` в корневой директории проекта (рядом с `docker-compose.yml`). Вы можете скопировать `env.example` (если он есть) или создать новый со следующим содержимым:
+    Создайте файл `.env` в корневой директории проекта (рядом с `compose.yml`). Вы можете скопировать `env.example` (если он есть) или создать новый со следующим содержимым:
 
     ```env
     # Django settings
@@ -65,8 +65,8 @@ Backend-часть для сайта объявлений. Платформа п
     EMAIL_HOST=smtp.example.com
     EMAIL_PORT=587
     EMAIL_USE_TLS=True
-    EMAIL_HOST_USER=your_email@example.com
-    EMAIL_HOST_PASSWORD=your_email_app_password
+    EMAIL_HOST_USER=email@example.com
+    EMAIL_HOST_PASSWORD=email_app_password
     DEFAULT_FROM_EMAIL=noreply@example.com # Email, с которого будут отправляться письма
 
     # URL для ссылки сброса пароля (укажите домен вашего фронтенда)
@@ -75,14 +75,15 @@ Backend-часть для сайта объявлений. Платформа п
 
 3.  **Сборка и запуск Docker контейнеров:**
     ```bash
-    docker-compose up --build -d
+    docker compose up --build -d
     ```
-    Эта команда соберет образы (если они еще не собраны) и запустит сервисы (`web` и `db`) в фоновом режиме.
+    Эта команда соберет образы (если они еще не собраны) и запустит сервисы в фоновом режиме.
 
 4.  **Применение миграций базы данных:**
     ```bash
-    docker-compose exec web python manage.py migrate
+    docker compose exec web python manage.py migrate
     ```
+    По умолчанию все необходимые для функционирования приложения миграции уже включены и применяются автоматически на этапе `docker compose up`.
 
 5.  **Создание суперпользователя (администратора):**
     ```bash
@@ -90,26 +91,28 @@ Backend-часть для сайта объявлений. Платформа п
     ```
     Следуйте инструкциям в консоли для создания администратора.
 
-Приложение будет доступно по адресу `http://localhost:8000` (или порт, указанный в `docker-compose.yml`).
-Документация API (Swagger/OpenAPI) будет доступна по адресу `http://localhost:8000/api/schema/swagger-ui/` или `http://localhost:8000/api/schema/redoc/`.
+Приложение будет доступно по адресу `http://localhost:8000` (или порт, указанный в `compose.yml`).
+Документация API (Swagger/OpenAPI) будет доступна по адресу `http://localhost:8000/api/swagger/` или `http://localhost:8000/api/redoc/`. Также по адресу `http://localhost:8000/api/swaggerjson/` доступна версия документации в формате JSON без Swagger-UI.
 
 ## Модели данных
 
 ### Пользователь (`User`)
 
 -   `id` (IntegerField, Primary Key, Auto-increment): Уникальный идентификатор.
--   `email` (EmailField, Unique): Электронная почта, используется в качестве логина.
--   `password` (CharField): Пароль пользователя (хранится в хэшированном виде).
 -   `first_name` (CharField): Имя пользователя.
 -   `last_name` (CharField): Фамилия пользователя.
 -   `phone` (CharField): Телефон для связи.
+-   `email` (EmailField, Unique): Электронная почта, используется в качестве логина.
+-   `password` (CharField): Пароль пользователя (хранится в хэшированном виде).
 -   `role` (CharField): Роль пользователя (например, `user`, `admin`). По умолчанию `user`.
 -   `image` (ImageField, опционально): Аватар пользователя.
 -   `is_active` (BooleanField): Активен ли пользователь. По умолчанию `True`.
--   `last_login` (DateTimeField, опционально): Время последнего входа.
+-   `is_staff` (BooleanField): Является ли пользователь персоналом. По умолчанию `False`.
+-   `is_superuser` (BooleanField): Является ли пользователь суперпользователем. По умолчанию `False`.
+-   `last_login` (DateTimeField, auto_now_add=True): Время последнего входа.
 -   `date_joined` (DateTimeField, auto_now_add=True): Дата регистрации.
 
-### Объявление (`Ad`)
+### Объявление (`Bulletin`)
 
 -   `id` (IntegerField, Primary Key, Auto-increment): Уникальный идентификатор.
 -   `title` (CharField): Название товара/объявления.
@@ -124,7 +127,7 @@ Backend-часть для сайта объявлений. Платформа п
 -   `id` (IntegerField, Primary Key, Auto-increment): Уникальный идентификатор.
 -   `text` (TextField): Текст отзыва.
 -   `author` (ForeignKey to `User`): Пользователь, оставивший отзыв.
--   `ad` (ForeignKey to `Ad`): Объявление, к которому оставлен отзыв.
+-   `bulletin` (ForeignKey to `Bulletin`): Объявление, к которому оставлен отзыв.
 -   `created_at` (DateTimeField, auto_now_add=True): Дата и время создания отзыва.
 
 ## API Эндпоинты
@@ -147,7 +150,7 @@ Backend-часть для сайта объявлений. Платформа п
     ```
 
 #### 2. Получение JWT токенов (Вход)
--   **POST** `/api/token/`
+-   **POST** `/api/login/`
 -   **Request body:**
     ```json
     {
