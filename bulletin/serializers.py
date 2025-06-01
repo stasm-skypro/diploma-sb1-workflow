@@ -13,8 +13,8 @@ class BulletinListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bulletin
-        fields = ["id", "title", "price", "author", "created_at"]
-        read_only_fields = ["id", "author", "created_at"]
+        fields = ["id", "title", "price", "created_at"]
+        read_only_fields = ["id", "created_at"]
 
 
 class BulletinDetailSerializer(serializers.ModelSerializer):

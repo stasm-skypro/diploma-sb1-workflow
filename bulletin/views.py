@@ -21,13 +21,10 @@ class BulletinViewSet(ModelViewSet):
     """
 
     queryset = Bulletin.objects.all().order_by("-created_at")
-
     permission_classes = [IsAuthorOrAdminOrReadOnlyForBulletin]
     pagination_class = BulletinPagination
-
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ["title"]
-
     search_fields = ["title"]
     ordering_fields = ["title", "price", "created_at"]
 
