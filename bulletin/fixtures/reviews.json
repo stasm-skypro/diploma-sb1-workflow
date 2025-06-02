@@ -1,302 +1,342 @@
 [
-  {
-    "model": "bulletin.review",
-    "pk": 1,
-    "fields": {
-      "text": "Отличный товар, полностью соответствует описанию.",
-      "author": 1,
-      "bulletin": 10,
-      "created_at": "2025-05-22T15:22:02.016Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 2,
-    "fields": {
-      "text": "Продавец ответил быстро, всё понравилось.",
-      "author": 2,
-      "bulletin": 9,
-      "created_at": "2025-05-22T15:22:02.020Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 3,
-    "fields": {
-      "text": "Хорошее качество, рекомендую.",
-      "author": 3,
-      "bulletin": 8,
-      "created_at": "2025-05-22T15:22:02.021Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 4,
-    "fields": {
-      "text": "Быстрая доставка и честное описание.",
-      "author": 4,
-      "bulletin": 7,
-      "created_at": "2025-05-22T15:22:02.022Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 5,
-    "fields": {
-      "text": "Пользуюсь уже неделю — всё отлично.",
-      "author": 5,
-      "bulletin": 6,
-      "created_at": "2025-05-22T15:22:02.023Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 6,
-    "fields": {
-      "text": "Было немного сомнений, но всё супер!",
-      "author": 6,
-      "bulletin": 5,
-      "created_at": "2025-05-22T15:22:02.024Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 7,
-    "fields": {
-      "text": "Упаковка надёжная, товар новый.",
-      "author": 7,
-      "bulletin": 4,
-      "created_at": "2025-05-22T15:22:02.025Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 8,
-    "fields": {
-      "text": "Продавец вежливый, помог с выбором.",
-      "author": 8,
-      "bulletin": 3,
-      "created_at": "2025-05-22T15:22:02.027Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 9,
-    "fields": {
-      "text": "Реально стоит своих денег.",
-      "author": 9,
-      "bulletin": 2,
-      "created_at": "2025-05-22T15:22:02.028Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 10,
-    "fields": {
-      "text": "Сделка прошла без проблем, рекомендую!",
-      "author": 10,
-      "bulletin": 1,
-      "created_at": "2025-05-22T15:22:02.029Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 11,
-    "fields": {
-      "text": "Качество отличное, как и ожидал.",
-      "author": 1,
-      "bulletin": 1,
-      "created_at": "2025-05-23T10:00:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 12,
-    "fields": {
-      "text": "Быстрая доставка, всё честно.",
-      "author": 2,
-      "bulletin": 2,
-      "created_at": "2025-05-23T10:01:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 13,
-    "fields": {
-      "text": "Хороший товар за свою цену.",
-      "author": 3,
-      "bulletin": 3,
-      "created_at": "2025-05-23T10:02:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 14,
-    "fields": {
-      "text": "Коммуникация отличная, советую.",
-      "author": 4,
-      "bulletin": 4,
-      "created_at": "2025-05-23T10:03:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 15,
-    "fields": {
-      "text": "Описание точное, без сюрпризов.",
-      "author": 5,
-      "bulletin": 5,
-      "created_at": "2025-05-23T10:04:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 16,
-    "fields": {
-      "text": "Работает без нареканий, доволен.",
-      "author": 6,
-      "bulletin": 6,
-      "created_at": "2025-05-23T10:05:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 17,
-    "fields": {
-      "text": "Уже пользовался — снова всё отлично.",
-      "author": 7,
-      "bulletin": 7,
-      "created_at": "2025-05-23T10:06:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 18,
-    "fields": {
-      "text": "Хорошая цена, быстро отправили.",
-      "author": 8,
-      "bulletin": 8,
-      "created_at": "2025-05-23T10:07:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 19,
-    "fields": {
-      "text": "Честный продавец, приятно иметь дело.",
-      "author": 9,
-      "bulletin": 9,
-      "created_at": "2025-05-23T10:08:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 20,
-    "fields": {
-      "text": "Очень быстро договорились и всё устроило.",
-      "author": 10,
-      "bulletin": 10,
-      "created_at": "2025-05-23T10:09:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 21,
-    "fields": {
-      "text": "Ещё бы купил у этого продавца.",
-      "author": 9,
-      "bulletin": 1,
-      "created_at": "2025-05-23T10:10:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 22,
-    "fields": {
-      "text": "Надёжная упаковка, всё целое.",
-      "author": 8,
-      "bulletin": 2,
-      "created_at": "2025-05-23T10:11:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 23,
-    "fields": {
-      "text": "Хорошая сделка, без накладок.",
-      "author": 7,
-      "bulletin": 3,
-      "created_at": "2025-05-23T10:12:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 24,
-    "fields": {
-      "text": "Всё как в описании, честно.",
-      "author": 6,
-      "bulletin": 4,
-      "created_at": "2025-05-23T10:13:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 25,
-    "fields": {
-      "text": "Работает отлично, рекомендую.",
-      "author": 5,
-      "bulletin": 5,
-      "created_at": "2025-05-23T10:14:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 26,
-    "fields": {
-      "text": "Всё подошло, товар как надо.",
-      "author": 4,
-      "bulletin": 6,
-      "created_at": "2025-05-23T10:15:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 27,
-    "fields": {
-      "text": "Проверил — всё ок!",
-      "author": 3,
-      "bulletin": 7,
-      "created_at": "2025-05-23T10:16:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 28,
-    "fields": {
-      "text": "Никаких претензий, всё супер.",
-      "author": 2,
-      "bulletin": 8,
-      "created_at": "2025-05-23T10:17:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 29,
-    "fields": {
-      "text": "Очень доволен, спасибо!",
-      "author": 1,
-      "bulletin": 9,
-      "created_at": "2025-05-23T10:18:00Z"
-    }
-  },
-  {
-    "model": "bulletin.review",
-    "pk": 30,
-    "fields": {
-      "text": "Приятная сделка, рекомендую продавца.",
-      "author": 10,
-      "bulletin": 10,
-      "created_at": "2025-05-23T10:19:00Z"
-    }
+{
+  "model": "bulletin.review",
+  "pk": 1,
+  "fields": {
+    "text": "Отличный товар, полностью соответствует описанию.",
+    "author": 1,
+    "bulletin": 10,
+    "created_at": "2025-05-22T15:22:02.016Z"
   }
+},
+{
+  "model": "bulletin.review",
+  "pk": 2,
+  "fields": {
+    "text": "Продавец ответил быстро, всё понравилось.",
+    "author": 2,
+    "bulletin": 9,
+    "created_at": "2025-05-22T15:22:02.020Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 3,
+  "fields": {
+    "text": "Хорошее качество, рекомендую.",
+    "author": 3,
+    "bulletin": 8,
+    "created_at": "2025-05-22T15:22:02.021Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 4,
+  "fields": {
+    "text": "Быстрая доставка и честное описание.",
+    "author": 4,
+    "bulletin": 7,
+    "created_at": "2025-05-22T15:22:02.022Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 5,
+  "fields": {
+    "text": "Пользуюсь уже неделю — всё отлично.",
+    "author": 5,
+    "bulletin": 6,
+    "created_at": "2025-05-22T15:22:02.023Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 6,
+  "fields": {
+    "text": "Было немного сомнений, но всё супер!",
+    "author": 6,
+    "bulletin": 5,
+    "created_at": "2025-05-22T15:22:02.024Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 7,
+  "fields": {
+    "text": "Упаковка надёжная, товар новый.",
+    "author": 7,
+    "bulletin": 4,
+    "created_at": "2025-05-22T15:22:02.025Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 8,
+  "fields": {
+    "text": "Продавец вежливый, помог с выбором.",
+    "author": 8,
+    "bulletin": 3,
+    "created_at": "2025-05-22T15:22:02.027Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 9,
+  "fields": {
+    "text": "Реально стоит своих денег.",
+    "author": 9,
+    "bulletin": 2,
+    "created_at": "2025-05-22T15:22:02.028Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 10,
+  "fields": {
+    "text": "Сделка прошла без проблем, рекомендую!",
+    "author": 10,
+    "bulletin": 1,
+    "created_at": "2025-05-22T15:22:02.029Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 11,
+  "fields": {
+    "text": "Качество отличное, как и ожидал.",
+    "author": 1,
+    "bulletin": 1,
+    "created_at": "2025-05-23T10:00:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 12,
+  "fields": {
+    "text": "Быстрая доставка, всё честно.",
+    "author": 2,
+    "bulletin": 2,
+    "created_at": "2025-05-23T10:01:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 13,
+  "fields": {
+    "text": "Хороший товар за свою цену.",
+    "author": 3,
+    "bulletin": 3,
+    "created_at": "2025-05-23T10:02:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 14,
+  "fields": {
+    "text": "Коммуникация отличная, советую.",
+    "author": 4,
+    "bulletin": 4,
+    "created_at": "2025-05-23T10:03:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 15,
+  "fields": {
+    "text": "Описание точное, без сюрпризов.",
+    "author": 5,
+    "bulletin": 5,
+    "created_at": "2025-05-23T10:04:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 16,
+  "fields": {
+    "text": "Работает без нареканий, доволен.",
+    "author": 6,
+    "bulletin": 6,
+    "created_at": "2025-05-23T10:05:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 17,
+  "fields": {
+    "text": "Уже пользовался — снова всё отлично.",
+    "author": 7,
+    "bulletin": 7,
+    "created_at": "2025-05-23T10:06:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 18,
+  "fields": {
+    "text": "Хорошая цена, быстро отправили.",
+    "author": 8,
+    "bulletin": 8,
+    "created_at": "2025-05-23T10:07:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 19,
+  "fields": {
+    "text": "Честный продавец, приятно иметь дело.",
+    "author": 9,
+    "bulletin": 9,
+    "created_at": "2025-05-23T10:08:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 20,
+  "fields": {
+    "text": "Очень быстро договорились и всё устроило.",
+    "author": 10,
+    "bulletin": 10,
+    "created_at": "2025-05-23T10:09:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 21,
+  "fields": {
+    "text": "Ещё бы купил у этого продавца.",
+    "author": 9,
+    "bulletin": 1,
+    "created_at": "2025-05-23T10:10:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 22,
+  "fields": {
+    "text": "Надёжная упаковка, всё целое.",
+    "author": 8,
+    "bulletin": 2,
+    "created_at": "2025-05-23T10:11:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 23,
+  "fields": {
+    "text": "Хорошая сделка, без накладок.",
+    "author": 7,
+    "bulletin": 3,
+    "created_at": "2025-05-23T10:12:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 24,
+  "fields": {
+    "text": "Всё как в описании, честно.",
+    "author": 6,
+    "bulletin": 4,
+    "created_at": "2025-05-23T10:13:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 25,
+  "fields": {
+    "text": "Работает отлично, рекомендую.",
+    "author": 5,
+    "bulletin": 5,
+    "created_at": "2025-05-23T10:14:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 26,
+  "fields": {
+    "text": "Всё подошло, товар как надо.",
+    "author": 4,
+    "bulletin": 6,
+    "created_at": "2025-05-23T10:15:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 27,
+  "fields": {
+    "text": "Проверил — всё ок!",
+    "author": 3,
+    "bulletin": 7,
+    "created_at": "2025-05-23T10:16:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 28,
+  "fields": {
+    "text": "Никаких претензий, всё супер.",
+    "author": 2,
+    "bulletin": 8,
+    "created_at": "2025-05-23T10:17:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 29,
+  "fields": {
+    "text": "Очень доволен, спасибо!",
+    "author": 1,
+    "bulletin": 9,
+    "created_at": "2025-05-23T10:18:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 30,
+  "fields": {
+    "text": "Приятная сделка, рекомендую продавца.",
+    "author": 10,
+    "bulletin": 10,
+    "created_at": "2025-05-23T10:19:00Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 31,
+  "fields": {
+    "text": "Всё действительно соответствует описанию. Отличная покупка.",
+    "author": 2,
+    "bulletin": 1,
+    "created_at": "2025-06-01T14:30:04.894Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 32,
+  "fields": {
+    "text": "Всё действительно соответствует описанию. Отличная покупка.",
+    "author": 2,
+    "bulletin": 1,
+    "created_at": "2025-06-01T14:32:20.575Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 33,
+  "fields": {
+    "text": "Всё действительно соответствует описанию. Отличная покупка.",
+    "author": 2,
+    "bulletin": 1,
+    "created_at": "2025-06-01T14:36:32.504Z"
+  }
+},
+{
+  "model": "bulletin.review",
+  "pk": 34,
+  "fields": {
+    "text": "Всё действительно соответствует описанию. Отличная покупка.",
+    "author": 2,
+    "bulletin": 1,
+    "created_at": "2025-06-02T08:43:03.799Z"
+  }
+}
 ]

@@ -4,7 +4,6 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$1000000$fjKiKgwt6XsRwUUK4L6Ix1$g1E/p2GxDnJbgX3hFWu974LvmxiZjMCwB6n0SUBuXqc=",
-    "last_login": null,
     "first_name": "Johny",
     "last_name": "Walker",
     "phone": "+1234567890",
@@ -14,6 +13,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -23,7 +24,6 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$1000000$5XoUlw7IuaQ4063K0dwbI8$3c0VOuSW4D/cglvzs39TOTKTrHgQa+ZcAl/MNSTSOEo=",
-    "last_login": "2025-05-26T09:22:26.515Z",
     "first_name": "Jack",
     "last_name": "Daniels",
     "phone": "+1234567890",
@@ -33,6 +33,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T16:37:01.367Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -42,7 +44,6 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$1000000$PN45SDe72K7lw61fGuy6OW$GQd5RCVVR0nXszE2hb3OOse8jVKw4MuifICtepEaCkM=",
-    "last_login": null,
     "first_name": "Jim",
     "last_name": "Beam",
     "phone": "+1234567890",
@@ -52,6 +53,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -61,7 +64,6 @@
   "pk": 4,
   "fields": {
     "password": "pbkdf2_sha256$1000000$NqKpgAwA1pIu2EFQU0LHQQ$Uw63YSjRQlUCOXqiYOCbjHvitsCDA/VB84+6lWnEBzY=",
-    "last_login": null,
     "first_name": "Jameson",
     "last_name": "Irish",
     "phone": "+1234567890",
@@ -71,6 +73,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -80,7 +84,6 @@
   "pk": 5,
   "fields": {
     "password": "pbkdf2_sha256$1000000$kiRgjnkqOgaXfIHL8a8SRI$5pxkapRGN5fycPv9JWvVzLA0LEAb6B+K8r0J0fURLU4=",
-    "last_login": null,
     "first_name": "Glen",
     "last_name": "Fiddich",
     "phone": "+1234567890",
@@ -90,6 +93,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -99,7 +104,6 @@
   "pk": 6,
   "fields": {
     "password": "pbkdf2_sha256$1000000$ClNtNwyLAZ6TAQZlVcqAYI$MM1+Hs13PlEi5Z2ebnS+FK2bN/9lrAhfNfkd+Dod1wc=",
-    "last_login": null,
     "first_name": "Chivas",
     "last_name": "Regal",
     "phone": "+1234567890",
@@ -109,6 +113,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -118,7 +124,6 @@
   "pk": 7,
   "fields": {
     "password": "pbkdf2_sha256$1000000$wcjyWoHlAKt9poKEyCaEtz$DinExTu1zsqDpgyePVi5r6yC002Rnkr0+yg3CFKNku0=",
-    "last_login": null,
     "first_name": "Veuve",
     "last_name": "Clicquot",
     "phone": "+1234567890",
@@ -128,6 +133,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -137,7 +144,6 @@
   "pk": 8,
   "fields": {
     "password": "pbkdf2_sha256$1000000$FXyYXUMtj2QBV6S6kQcjOR$lCAw4lqNtDRQJjlgpDuTl9hXnYbfk/KZwbCYI+Cc/gY=",
-    "last_login": null,
     "first_name": "Remy",
     "last_name": "Martin",
     "phone": "+1234567890",
@@ -147,6 +153,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -156,7 +164,6 @@
   "pk": 9,
   "fields": {
     "password": "pbkdf2_sha256$1000000$4vsFMOBEjqzYUIW2uUQCoe$dKPUgUC7uWgUJtK9bcqCsWmA5Q2WK7R3ng95B9pO5nI=",
-    "last_login": null,
     "first_name": "Hennessy",
     "last_name": "XO",
     "phone": "+1234567890",
@@ -166,6 +173,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T16:51:51.520Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [
       1
     ],
@@ -177,7 +186,6 @@
   "pk": 10,
   "fields": {
     "password": "pbkdf2_sha256$1000000$mhS2Y97HYleb2fuPdEYMBH$lZJm94IZZZni0v/ffGvoFr4ZcZvlWCT6jSwNsL+WRQM=",
-    "last_login": null,
     "first_name": "Don",
     "last_name": "Julio",
     "phone": "+1234567890",
@@ -187,6 +195,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -196,7 +206,6 @@
   "pk": 12,
   "fields": {
     "password": "pbkdf2_sha256$1000000$TDAhk9uWVwiz2Axmfw6Cqh$cOFuaGkw8397QeCXheeTbcV5rOOiUM1DHo9dUmvw/zs=",
-    "last_login": null,
     "first_name": "Станислав",
     "last_name": "Маяцкий",
     "phone": "+012345678",
@@ -206,6 +215,8 @@
     "is_active": true,
     "is_staff": false,
     "is_superuser": false,
+    "last_login": "2025-06-01T13:12:09.606Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
@@ -215,7 +226,6 @@
   "pk": 13,
   "fields": {
     "password": "pbkdf2_sha256$1000000$cm2DeYg167ThdeZyF60o2k$KuWiwEm4qQxrqZL8XpTVSI1+6ETrt9A5MIom6tn8Phk=",
-    "last_login": "2025-05-24T11:45:53.897Z",
     "first_name": "Stanislav",
     "last_name": "Mayatskiy",
     "phone": "+1234567890",
@@ -225,6 +235,8 @@
     "is_active": true,
     "is_staff": true,
     "is_superuser": true,
+    "last_login": "2025-06-01T16:54:21.774Z",
+    "date_joined": "2025-06-01T13:12:09.549Z",
     "groups": [],
     "user_permissions": []
   }
