@@ -207,7 +207,7 @@ class TestUserMe:
         response = self.client.post(token_url, {"email": self.user.email, "password": "secure1234"})
         access_token = response.data["access"]
         self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {access_token}")
-        self.url = reverse("user:me")
+        self.url = reverse("user:user-me")
 
     def test_get_user_info(self):
         response = self.client.get(self.url)
