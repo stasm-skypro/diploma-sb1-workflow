@@ -54,3 +54,19 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 class EmailTokenObtainPairSerializer(TokenObtainPairSerializer):
     username_field = "email"
+
+
+class UserSerializer(serializers.ModelSerializer):
+    """
+    Представляет собой универсальный сериализатор пользователя.
+    """
+
+    class Meta:
+        """
+        Говорит сериализатору, что он работает с моделью User, и определяет список полей,
+        которые он должен обрабатывать.
+        """
+
+        model = User
+        fields = ["id", "email", "first_name", "last_name", "role", "is_active", "is_staff", "is_superuser"]
+        read_only_fields = ["id", "email"]
