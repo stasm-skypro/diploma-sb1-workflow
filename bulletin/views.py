@@ -1,7 +1,9 @@
 # bulletin/views.py
+
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action
 from rest_framework.exceptions import NotFound
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
@@ -81,29 +83,17 @@ class ReviewViewSet(ModelViewSet):
 
     def perform_create(self, serializer):  # type: ignore
         """
-        Сохраняет новый отзыв, устанавливая текущего пользователя автором,
-        и инициирует отправку уведомительного письма владельцу объявления.
-
-        :param serializer: Экземпляр сериализатора, содержащий проверенные данные отзыва.
-        :return: None
+        Сохраняет новый отзыв, устанавливая текущего пользователя автором и передавая bulletin.
         """
-        # Назначаем текущего пользователя автором
-        review = serializer.save(author=self.request.user)
+        bulletin = get_object_or_404(Bulletin, pk=self.kwargs["bulletin_pk"])
+        review = serializer.save(author=self.request.user, bulletin=bulletin)
 
         # Отправляем письмо владельцу объявления
-        bulletin = review.bulletin
-        email = bulletin.author.email
-        bulletin_id = bulletin.id
-        bulletin_title = bulletin.title
-        bulletin_author = bulletin.author.email
-        review_author = review.author.email
-        review_text = review.text
-
         send_review_notification_email.delay(  # type: ignore
-            email=email,
-            bulletin_id=bulletin_id,
-            bulletin_title=bulletin_title,
-            bulletin_author=bulletin_author,
-            review_author=review_author,
-            review_text=review_text,
+            email=bulletin.author.email,
+            bulletin_id=bulletin.id,
+            bulletin_title=bulletin.title,
+            bulletin_author=bulletin.author.email,
+            review_author=review.author.email,
+            review_text=review.text,
         )

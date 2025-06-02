@@ -65,15 +65,4 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ["id", "text", "author", "bulletin", "created_at"]
-        read_only_fields = ["id", "author", "created_at"]
-
-    def create(self, validated_data):
-        """
-        Создаёт новый объект отзыва и автоматически присваивает текущего пользователя как автора.
-
-        :validated_data (dict): Валидированные данные для создания отзыва
-        :returns: Review: Созданный объект отзыва
-        """
-        # автоматически назначаем автора на текущего пользователя
-        validated_data["author"] = self.context["request"].user
-        return super().create(validated_data)
+        read_only_fields = ["id", "author", "bulletin", "created_at"]
