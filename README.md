@@ -32,7 +32,7 @@ Backend-часть для сайта объявлений. Платформа п
 
 ### Предварительные требования
 
--   Python 3.8+
+-   Python 3.10+
 -   Docker
 -   Docker Compose
 
@@ -40,8 +40,7 @@ Backend-часть для сайта объявлений. Платформа п
 
 1.  **Клонируйте репозиторий:**
     ```bash
-    git clone <URL_ВАШЕГО_РЕПОЗИТОРИЯ>
-    cd bulletin_board # или название вашей корневой папки проекта
+    git clone https://github.com/stasm-skypro/diploma-sb1-docker.git
     ```
 
 2.  **Настройка переменных окружения:**
@@ -54,10 +53,10 @@ Backend-часть для сайта объявлений. Платформа п
     ALLOWED_HOSTS=localhost,127.0.0.1
 
     # Database settings (PostgreSQL)
-    POSTGRES_DB=bulletin_board_db
+    POSTGRES_DB=bulletin
     POSTGRES_USER=user
     POSTGRES_PASSWORD=password
-    POSTGRES_HOST=db # Имя сервиса БД в docker-compose.yml
+    POSTGRES_HOST=db # Имя сервиса БД в docker compose.yaml
     POSTGRES_PORT=5432
 
     # Email settings (для восстановления пароля)
@@ -65,12 +64,15 @@ Backend-часть для сайта объявлений. Платформа п
     EMAIL_HOST=smtp.example.com
     EMAIL_PORT=587
     EMAIL_USE_TLS=True
+    EMAIL_USE_SSL=False
     EMAIL_HOST_USER=email@example.com
     EMAIL_HOST_PASSWORD=email_app_password
-    DEFAULT_FROM_EMAIL=noreply@example.com # Email, с которого будут отправляться письма
 
-    # URL для ссылки сброса пароля (укажите домен вашего фронтенда)
-    PASSWORD_RESET_CONFIRM_URL=http://localhost:3000/password-reset/confirm/{uid}/{token}/
+    REDIS_HOST=redis_host
+    REDIS_PORT=redis_port
+
+    CELERY_BROKER_URL=redis://${REDIS_HOST}:${REDIS_PORT}/0
+    CELERY_RESULT_BACKEND=redis://${REDIS_HOST}:${REDIS_PORT}/0
     ```
 
 3.  **Сборка и запуск Docker контейнеров:**
@@ -91,7 +93,7 @@ Backend-часть для сайта объявлений. Платформа п
     ```
     Следуйте инструкциям в консоли для создания администратора.
 
-Приложение будет доступно по адресу `http://localhost:8000` (или порт, указанный в `compose.yml`).
+Приложение будет доступно по адресу `http://localhost:8000` (или порт, указанный в `compose.yaml`).
 Документация API (Swagger/OpenAPI) будет доступна по адресу `http://localhost:8000/api/swagger/` или `http://localhost:8000/api/redoc/`. Также по адресу `http://localhost:8000/api/swaggerjson/` доступна версия документации в формате JSON без Swagger-UI.
 
 ## Модели данных
