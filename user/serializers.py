@@ -35,13 +35,14 @@ class RegisterSerializer(serializers.ModelSerializer):
         """
         # password_confirmation не является полем модели User, и его нельзя передавать в create_user()
         validated_data.pop("password_confirmation")
-        # статический анализатор не знает о существовании метода create_user в менеджере модели User
+        # статический анализатор не знает о существовании метода create_user в менеджере модели User, поэтому
         user = User.objects.create_user(**validated_data)  # type: ignore
         return user
 
     class Meta:
         """
-        Говорит сериализатору, что он работает с моделью User, и обрабатывает только поля email и password.
+        Говорит сериализатору, что он работает с моделью User, и обрабатывает поля, которые нужны при регистрации:
+        'first_name', 'last_name', 'phone', 'email', 'password', 'password_confirmation'.
         """
 
         model = User

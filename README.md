@@ -139,15 +139,16 @@ Backend-часть для сайта объявлений. Платформа п
 ### Аутентификация и Пользователи
 
 #### 1. Регистрация пользователя
--   **POST** `/api/users/`
+-   **POST** `/api/user/users/`
 -   **Request body:**
     ```json
     {
-        "email": "user@example.com",
-        "password": "password123",
         "first_name": "Имя",
         "last_name": "Фамилия",
-        "phone": "+71234567890"
+        "phone": "+71234567890",
+        "email": "user@example.com",
+        "password": "password123",
+        "password_confirmation": "password123"
     }
     ```
 
@@ -184,22 +185,22 @@ Backend-часть для сайта объявлений. Платформа п
     ```
 
 #### 4. Управление текущим пользователем (Профиль)
--   **GET** `/api/users/me/`: Получить данные текущего пользователя.
--   **PUT/PATCH** `/api/users/me/`: Обновить данные текущего пользователя.
--   **DELETE** `/api/users/me/`: Удалить (деактивировать) текущего пользователя.
+-   **GET** `/api/user/users/me/`: Получить данные текущего пользователя.
+-   **PUT/PATCH** `/api/user/users/me/`: Обновить данные текущего пользователя.
+-   **DELETE** `/api/user/users/me/`: Удалить (деактивировать) текущего пользователя.
 
 #### 5. Сброс пароля (Запрос на сброс)
--   **POST** `/api/users/reset_password/`
+-   **POST** `/api/user/reset_password/`
 -   **Request body:**
     ```json
     {
         "email": "user@example.com"
     }
     ```
--   **Действие:** Сервер отправляет на указанную почту ссылку для сброса пароля. Ссылка формируется на основе `PASSWORD_RESET_CONFIRM_URL` из настроек (например, `http://your-frontend-domain.com/password-reset/confirm/{uid}/{token}/`).
+-   **Действие:** Сервер отправляет на указанную почту ссылку для сброса пароля. Ссылка формируется на основе `PASSWORD_RESET_CONFIRM_URL` из настроек (например, `http://localhost:8000/reset_password_confirm/?uid={uid}&token={token}/`).
 
 #### 6. Сброс пароля (Подтверждение нового пароля)
--   **POST** `/api/users/reset_password_confirm/`
+-   **POST** `/api/user/reset_password_confirm/`
 -   **Request body:**
     ```json
     {
@@ -223,7 +224,7 @@ Backend-часть для сайта объявлений. Платформа п
     -   Доступ: Владелец объявления или Администратор.
 -   **DELETE** `/api/bulletin/bulletins/{id}/`: Удаление объявления.
     -   Доступ: Владелец объявления или Администратор.
--   **GET** `/api/bulletins/`: Получение списка объявлений текущего авторизованного пользователя.
+-   **GET** `/api/bulletin/bulletins/me/`: Получение списка объявлений текущего авторизованного пользователя.
     -   Доступ: Авторизованные пользователи.
 
 ### Отзывы (`/api/bulletins/{ad_pk}/reviews/`)
