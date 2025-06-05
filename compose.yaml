@@ -21,7 +21,7 @@ services:
       interval: 10s
       retries: 5
       start_period: 30s
-      timeout: 5s
+      timeout: 10s
 
   redis:
     image: redis
@@ -38,7 +38,7 @@ services:
       interval: 10s
       retries: 5
       start_period: 30s
-      timeout: 5s
+      timeout: 10s
 
   web:
     build: .
@@ -63,7 +63,7 @@ services:
       interval: 10s
       retries: 3
       start_period: 30s
-      timeout: 5s
+      timeout: 10s
 
   celery:
     build: .
@@ -86,7 +86,27 @@ services:
       interval: 10s
       retries: 3
       start_period: 30s
-      timeout: 5s
+      timeout: 10s
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    container_name: nginx
+    ports:
+      - '80:80'
+    volumes:
+      - static_volume:/app/staticfiles
+    depends_on:
+      - web
+    networks:
+      - dbnet
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost/']
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
 networks:
   dbnet:
