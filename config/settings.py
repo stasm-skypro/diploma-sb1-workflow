@@ -105,10 +105,12 @@ AUTH_USER_MODEL = "user.User"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:8000",
+    "http://5.35.108.203",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:8000",
+    "http://5.35.108.203",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
 
@@ -160,8 +162,8 @@ CELERY_TIME_ZONE = TIME_ZONE
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
-# Усовершенствованное отображение форм Bootstrap 4
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+# Усовершенствованное отображение форм Bootstrap
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Убирает предупреждение в консоли - теперь (без точки): GET /swaggerjson
 SWAGGER_USE_COMPAT_RENDERERS = False

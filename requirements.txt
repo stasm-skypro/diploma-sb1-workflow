@@ -25,6 +25,7 @@ drf-yasg==1.21.10
 executing==2.2.0
 filelock==3.18.0
 flake8==7.2.0
+gunicorn==23.0.0
 identify==2.6.12
 inflection==0.5.1
 iniconfig==2.1.0

@@ -29,7 +29,9 @@ python manage.py load_initial_bulletin_data
 echo "Fixtures loaded"
 
 # Собираем статику
+echo "Собираем статику..."
 python manage.py collectstatic --noinput
 
 # Запускаем Gunicorn
+echo "Запускаем Gunicorn..."
 exec gunicorn config.wsgi:application --bind 0.0.0.0:8000

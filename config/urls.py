@@ -1,5 +1,6 @@
 # config/urls.py
 from django.contrib import admin
+from django.http import HttpResponseRedirect
 from django.urls import include, path
 
 from drf_yasg import openapi
@@ -31,4 +32,6 @@ urlpatterns = [
     path("api/bulletin/", include("bulletin.urls", namespace="bulletin")),
     #
     path("api-auth/", include("rest_framework.urls")),  # login/logout через browsable API
+    # Чтобы при заходе на / не было 404, редирект на /api/swagger/
+    path("", lambda request: HttpResponseRedirect("/api/swagger/")),
 ]
