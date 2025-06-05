@@ -195,6 +195,9 @@ class TestUserMe:
     """
 
     def setup_method(self):
+        """
+        Создание клиента и URL для эндпоинта /me/.
+        """
         self.client = APIClient()
         self.user = User.objects.create_user(
             email="me@example.com",
@@ -210,17 +213,26 @@ class TestUserMe:
         self.url = reverse("user:user-me")
 
     def test_get_user_info(self):
+        """
+        Тест получения информации о текущем пользователе.
+        """
         response = self.client.get(self.url)
         assert response.status_code == status.HTTP_200_OK
         assert response.data["email"] == self.user.email
         assert response.data["first_name"] == self.user.first_name
 
     def test_update_user_info(self):
+        """
+        Тест обновления информации о текущем пользователе.
+        """
         response = self.client.patch(self.url, {"first_name": "Новый"})
         assert response.status_code == status.HTTP_200_OK
         assert response.data["first_name"] == "Новый"
 
     def test_deactivate_user(self):
+        """
+        Тест деактивации текущего пользователя.
+        """
         response = self.client.delete(self.url)
         assert response.status_code == status.HTTP_204_NO_CONTENT
         self.user.refresh_from_db()
