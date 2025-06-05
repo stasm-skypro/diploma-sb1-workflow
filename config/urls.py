@@ -38,6 +38,8 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),  # login/logout через browsable API
     # Чтобы при заходе на / не было 404, редирект на /api/swagger/
     path("", lambda request: HttpResponseRedirect("/api/swagger/")),
-    #
+]
+
+urlpatterns += [
     path("healthz", health_check),
 ]
