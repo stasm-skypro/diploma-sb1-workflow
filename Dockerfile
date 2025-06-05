@@ -40,5 +40,5 @@ RUN mkdir -p /app/staticfiles /app/static && chown -R userdj:groupdjango /app/st
 # Возвращаем пользователя на userdj
 USER userdj
 
-# Указываем команду  по умолчанию для запуска проекта в контейнере при старте
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Указываем команду по умолчанию для запуска проекта в контейнере при старте
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
